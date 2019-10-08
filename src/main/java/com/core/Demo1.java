@@ -1,6 +1,6 @@
 package com.core;
 
-import com.core.bean.SimpleBean;
+import com.core.bean.ProdSimpleBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -14,7 +14,8 @@ public class Demo1 {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        SimpleBean object = (SimpleBean) context.getBean("SimpleBean");
+//        context.getEnvironment().setActiveProfiles("prod");
+        ProdSimpleBean object = (ProdSimpleBean) context.getBean("prodSimpleBean");
         object.send();
         context.close();
     }

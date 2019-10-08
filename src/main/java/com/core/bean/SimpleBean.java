@@ -6,9 +6,7 @@ package com.core.bean;
  * @Date 2019/10/8 4:30 PM
  * @Created by nihui
  */
-public class SimpleBean {
+public interface SimpleBean {
 
-    public void send(){
-        System.out.println("This is SimpleBean Test");
-    }
+    public void send();
 }
