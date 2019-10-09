@@ -1,6 +1,6 @@
-package com.core;
+package com.core.charp2.demo01;
 
-import com.core.bean.ProdSimpleBean;
+import com.core.charp2.demo01.bean.ProdSimpleBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

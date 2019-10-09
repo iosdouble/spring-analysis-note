@@ -16,7 +16,7 @@
         <!--</bean>-->
     <!--</beans>-->
 
-    <bean id="prodSimpleBean" class="com.core.bean.ProdSimpleBean">
+    <bean id="prodSimpleBean" class="com.core.charp2.demo01.bean.ProdSimpleBean">
 
     </bean>
 

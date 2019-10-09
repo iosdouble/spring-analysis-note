@@ -1,4 +1,4 @@
-package com.core.bean;
+package com.core.charp2.demo01.bean;
 
 /**
  * @Classname DevSimpleBean

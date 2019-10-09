@@ -1,45 +1,39 @@
+
 # Spring-Core模块
+
+
+
+# 容器的基本实现
+
+## 2.1 容器的基本用法
+
+&emsp;&emsp;容器作为Spring框架中最为主要的东西，类似于一个大的集装箱，所有的对象都可以往这个集装箱中装。对于一个JavaBean来说就是这个集装
+箱中所要装的东西所以说如果只有东西但是没有装东西的地方这样的话对于对象来说就没有任何的意义了。
+
+&emsp;&emsp;正如之前上面的例子一样在com.core.charp2.demo01.bean包中创建了两个对象和一个接口。从这个上面来看这类与普通的Java类没有什么
+区别，但是如果使用了Spring框架之后就可以让这个类变成真正意义上的POJO。这就是通过Spring的配置文件来实现的。也就是bean.xml文件中所配置的内
+容一样。通过代码中的例子是可以看出来效果的。
+
+## 2.2 功能分析
+ 
+&emsp;&emsp;上面的例子从简单的角度上讲无非实现了三个功能
+
+* 1、通过对于配置文件bean.xml的读取和验证获取到对象的创建信息
+* 2、获取到对象信息，通过反射机制进行序列化操作
+* 3、将所有的应用逻辑进行串联操作
+
+## 2.3 项目体验
+
+## 2.4 Spring的组成结构
 
 ![image](image/ClassPathXMLApplicationContext类结构图.png)
 
 &emsp;&emsp;通过上图可以看到在其中有一个比较重要的类就是ResourceLoader类，这个类提供了策略模式。通过实现这个接口进而实现接口中的方法，
 实现不同的获取Resource的方法。
 
-
-```
-public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh, @Nullable ApplicationContext parent)
-	throws BeansException {
-     super(parent);
-     setConfigLocations(configLocations);
-     if (refresh) {
-     	refresh();
-     }
-}
-```
-
-```java 
-public AbstractApplicationContext(@Nullable ApplicationContext parent) {
-  this();
-  setParent(parent);
-}
-
-
-
-public AbstractApplicationContext() {
-  this.resourcePatternResolver = getResourcePatternResolver();
-}
-
-
-protected ResourcePatternResolver getResourcePatternResolver() {
-   return new PathMatchingResourcePatternResolver(this);
-}
-```
 ![iamge](image/StandardEnvironment环境变量继承关系.png)
 
-&emsp;&emsp;对于环境变量获取主要有两个方面的内容，一个方面是通过JVM固定参数的形式，一个方面是通过配置文件的方式。这里的Environment就是对着两个方面的配置
-通过这两个方面的配置来达到灵活配置的目的，但是更多的或者是更重要的是通过配置文件的方式进行配置。
+&emsp;&emsp;对于环境变量获取主要有两个方面的内容，一个方面是通过JVM固定参数的形式，一个方面是通过配置文件的方式。这里的Environment就是对
+着两个方面的配置通过这两个方面的配置来达到灵活配置的目的，但是更多的或者是更重要的是通过配置文件的方式进行配置。
 
 
-## 容器的基本用法
-
-&emsp;&emsp;容器作为Spring框架中最为主要的东西，类似于一个大的集装箱，所有的对象都可以往这个集装箱中装，
