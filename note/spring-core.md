@@ -38,3 +38,8 @@ protected ResourcePatternResolver getResourcePatternResolver() {
 
 &emsp;&emsp;对于环境变量获取主要有两个方面的内容，一个方面是通过JVM固定参数的形式，一个方面是通过配置文件的方式。这里的Environment就是对着两个方面的配置
 通过这两个方面的配置来达到灵活配置的目的，但是更多的或者是更重要的是通过配置文件的方式进行配置。
+
+
+## 容器的基本用法
+
+&emsp;&emsp;容器作为Spring框架中最为主要的东西，类似于一个大的集装箱，所有的对象都可以往这个集装箱中装，
